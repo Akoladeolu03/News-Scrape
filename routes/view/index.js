@@ -6,6 +6,7 @@ router.get("/", function(req, res) {
   db.Headline.find({ saved: false })
     .sort({ date: -1 })
     .then(function(dbArticles) {
+      console.log(dbArticles)
       res.render("home", { articles: dbArticles });
     });
 });

@@ -4,12 +4,18 @@ var db = require("../models");
 var scrape = require("../scripts/scrape");
 
 module.exports = {
+  findAll: function(req, res) {
+    return
+  },
+  delete: function(req, res) {
+    return
+  },
   scrapeHeadlines: function(req, res) {
     // scrape the NYT
     return scrape()
       .then(function(articles) {
         // then insert articles into the db
-        return db.Headline.create(articles);
+        return db.Headline.create(articles)
       })
       .then(function(dbHeadline) {
         if (dbHeadline.length === 0) {
